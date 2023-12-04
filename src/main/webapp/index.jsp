@@ -11,7 +11,4 @@
 <head>
     <title>Parking Lot</title>
 </head>
-<body>
-<a href="about.jsp">about</a>
-</body>
 </html>

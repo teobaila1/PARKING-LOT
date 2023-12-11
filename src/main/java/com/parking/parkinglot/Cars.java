@@ -8,11 +8,14 @@ import java.util.List;
 
 import com.parking.parkinglot.common.CarDto;
 import com.parking.parkinglot.ejb.CarsBean;
+import jakarta.annotation.security.DeclareRoles;
 import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-
+@DeclareRoles({"READ_CARS", "WRITE_CARS"})
+@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"READ_CARS"}),
+        httpMethodConstraints = {@HttpMethodConstraint(value = "POST", rolesAllowed = {"WRITE_CARS"})})
 @WebServlet(name = "Cars", value = "/Cars")
 public class Cars extends HttpServlet {
 

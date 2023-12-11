@@ -12,7 +12,6 @@ public class User {
     }
     @Id
     @GeneratedValue
-
     public Long getId() {
         return id;
     }
@@ -48,7 +47,7 @@ public class User {
 
     private Collection<Car> cars;
 
-    @OneToMany       //(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner")
     public Collection<Car> getCars() {
         return cars;
     }

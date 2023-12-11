@@ -12,26 +12,40 @@
                 <div class="invalid-feedback">
                     License Plate is required.
                 </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
                 <label for="parking_spot">Parking Spot</label>
                 <input type="text" class="form-control" id="parking_spot" name="parking_spot" placeholder="" value="${car.parkingSpot}" required>
                 <div class="invalid-feedback">
-                    Parking spot is required.
+                    Parking Spot is required.
                 </div>
-                <label for="owner_id">Owner</label>
-                <select class="custom-select d-block w-100" id="owner_id" name="owner_id" required>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <div class="col-md-4">
+                <label for="owner_id" class="form-label">Owner</label>
+                <select class="form-select" id="owner_id" name="owner_id" required>
                     <option value="">Choose...</option>
                     <c:forEach var="user" items="${users}" varStatus="status">
-                        <option value="${user.id}">${car.ownerName eq user.username ? 'selected' : ''} >${user.username}</option>
+                        <option value="${user.id}"${car.ownerName eq user.username ? 'selected' : ''}>${user.username}</option>
                     </c:forEach>
                 </select>
                 <div class="invalid-feedback">
-                    Owner is required
+                    Owner is required.
                 </div>
-                <hr class="mb-4">
-                <input type="hidden" name="car_id" value="${car.id}"/>
-                <button class="btn btn-primary btn-lg" type="submit" >Save</button>
+            </div>
+        </div>
+
+        <input type="hidden" name="car_id" value="${car.id}"/>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <button class="w-25 btn btn-primary btn-lg" type="submit">Save</button>
             </div>
         </div>
     </form>
-
 </t:pageTemplate>

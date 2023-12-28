@@ -8,6 +8,7 @@ public class Car {
     private String licensePlate;
     private String parkingSpot;
     private Long id;
+    private CarPhoto photo;
 
     @ManyToOne
     public User getOwner() {
@@ -43,5 +44,11 @@ public class Car {
     public void setParkingSpot(String parkingSpot) {
         this.parkingSpot = parkingSpot;
     }
-
+    @OneToOne(mappedBy = "car", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    public CarPhoto getPhoto() {
+        return photo;
+    }
+    public void setPhoto(CarPhoto photo) {
+        this.photo = photo;
+    }
 }

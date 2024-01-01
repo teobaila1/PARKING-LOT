@@ -29,7 +29,7 @@
                             ${car.ownerName}
                     </div>
                     <div class="col">
-                        <img src="${pageContext.request.contextPath}/CarPhotos?id=${car.id}" width="48">
+                        <img src="${pageContext.request.contextPath}/CarPhotos?id=${car.id}" width="48"/>
                     </div>
                     <c:if test="${pageContext.request.isUserInRole('WRITE_CARS')}">
                             <div class="col">

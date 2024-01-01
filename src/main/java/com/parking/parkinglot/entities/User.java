@@ -1,6 +1,7 @@
 package com.parking.parkinglot.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 
 import java.util.Collection;
 
@@ -18,6 +19,7 @@ public class User {
 
     private String username;
     @Basic
+    @Column(unique = true, nullable = false, length = 100)
     public String getUsername() {
         return username;
     }
@@ -29,6 +31,8 @@ public class User {
     private String email;
     private String password;
 
+    @Email
+    @Column(unique = true, nullable = false, length = 100)
     public String getEmail() {
         return email;
     }

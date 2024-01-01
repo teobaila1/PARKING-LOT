@@ -51,7 +51,7 @@ public class CarPhoto {
     public Long getId() {
         return id;
     }
-@OneToOne
+    @OneToOne
     public Car getCar() {
         return car;
     }
